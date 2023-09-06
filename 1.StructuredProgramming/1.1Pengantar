@@ -1,0 +1,157 @@
+[<< Materi Sebelumnya (Daftar Materi) <<](../DaftarMateri.md)
+# 2.1 - Pengantar (Program Sederhana, Variabel, dan Basic I/O)
+## Program Sederhana
+Program pertama dalam bahasa pemrograman C yang paling sederhana dan telah menjadi bagian tradisi dalam dunia IT adalah "Hello World." Contoh programnya terlihat seperti berikut ini :
+```c
+/* library stdio.h */
+#include <stdio.h>
+
+// Fungsi main
+int main() {
+    printf("Hello World!");
+    return 0;
+}
+```
+### Memahami kode
+Mari kita telaah dan pahami masing-masing baris dari kode di atas tersebut, dimulai dari baris paling atas.
+```c 
+#include <stdio.h>
+ ```
+ `#include` adalah sebuah perintah untuk menggunakan sebuah *library* bawaan C yang bernama `stdio.h`, yang memiliki banyak fungsi didalamnya, salah satunya adalah `printf`. Baris kode di atas sering disebut *preprocessor directive*. Ingat, tidak seperti baris kode C pada umumnya, *preprocessor directive* tidak memerlukan titik koma (`;`) pada akhir barisnya.
+
+```c
+int main() {
+    // ...
+}
+```
+Selanjutnya, terdapat fungsi `main()` di atas, yang merupakan fungsi utama dalam sebuah kode C. Kode utama dari program Anda akan ditulis di bawah fungsi ini. Di depan fungsi ini, terdapat kata kunci `int`, yang menandakan *return value* atau nilai yang akan dikembalikan oleh program Anda, dalam bentuk bilangan bulat (*int*). Kami akan menjelaskan lebih lanjut tentang *return value* dan tipe data dalam pertemuan-pertemuan berikutnya. Untuk saat ini, gunakanlah kode di atas sebagai titik awal untuk memulai program Anda.
+```c
+printf("Hello, World!");
+```
+Fungsi `printf()` di atas adalah fungsi C yang terdapat pada *library* `stdio.h`. Fungsi ini digunakan untuk mencetak *string* atau tulisan yang kalian masukkan sebagai parameter (di dalam kurung fungsi) ke dalam *console* (misal Windows cmd, atau linux terminal). Di contoh tersebut, kita mencetakkan tulisan **"Hello World!"** ke dalam *console*.
+```c
+return 0;
+```
+Kata kunci `return` digunakan untuk menghentikan sebuah fungsi (dalam kasus ini `main()`) lalu mengembalikan kontrol ke pemanggil fungsi. Karena `main()` merupakan fungsi utama, maka memanggil return akan menghentikan program ini. Angka `0` yang terdapat setelah `return` menandakan kode program. Jika program berjalan lancar, biasanya kode yang dipakai adalah `0` dan ketika error kode yang dipakai adalah '-1'.
+```c
+// Fungsi main
+/* Menggunakan library stdio.h */
+```
+Terakhir, 2 baris di atas merupakan sebuah komentar yang tidak akan dibaca komputer pada program. Komentar biasa berfungsi menjelaskan sebuhab kode agar lebih mudah dipahami, khususnya untuk pemrogram lain. Komentar dalam C mengikuti *syntax* seperti di atas, dengan menambahkan `//` sebelum komentar pada komentar satu baris, atau mengapit komentar dengan `/*` dan `*/` untuk multi baris.
+
+## Variabel dan Tipe Data C
+Pada hampir semua bahasa pemrograman, terdapat sebuah sistem yang bernama variabel. Seperti pada aljabar, variabel adalah sebuah ekspresi yang berfungsi untuk menyimpan sebuah data. Pada aljabar, variabel dapat digambarkan di bawah ini.
+```
+x + y = 12
+2x + 5y = 54
+```
+Dari contoh di atas, menyatakan bahwa `x` bernilai 2 dan `y` bernilai 5. Pada bahasa C, terdapat juga variabel yang memiliki fungsi yang mirip seperti di atas, namun dengan berbagai macam jenis, masing-masing memiliki jenis data apa yang dapat disimpan dalam variabel tersebut. Lihat tabel di bawah ini
+
+### Tipe data C
+|Tipe Data|Jenis Data|Pendefinisian|
+|--|--|--|
+|Integer|Bilangan bulat|`char`, `short`, `int`, `long`, dan `long long`|
+|Unsigned Integer|Bilangan bulat non-negatif|Sama dengan atas, diberi imbuhan depan `unsigned`|
+|Floating Point|Bilangan real|`float` dan `double`|
+|Structure|Tipe data buatan pengguna|Buatan pengguna|
+
+Setiap tipe data di atas memiliki nilai maksimal dan minimal yang dapat disimpan dalam sebuah variabel (Rentang) masing-masing. Contohnya, `char` hanya dapat menyimpan kode -128 hingga 127, sedangkan `long` dapat menyimpan data hingga 2 milyar tergantung pada implementasinya. Tipe data `unsigned` tidak dapat merepresentasikan bilangan negatif, namun rentang atasnya dua kali dari bilangan bulat. Floating point dapat menyimpan bilangan real seperti `3.14` atau `12.345`.
+
+### Pendefinisian Variabel C
+Variabel di bahasa pemrograman C harus didefinisikan sebelum dipakai pada program. Sebagai contoh, kita akan mendefinisikan sebuah variabel bernama `segitiga` dan `persegi` yang menyimpan nilai `3` dan `4`. Untuk nilai yang berupa angka, kita biasa menggunakan tipe data `int`.
+```c
+int segitiga = 3;
+int persegi = 4;
+```
+Berikut cara lain mendefinisikan variabel di atas dengan gaya yang berbeda.
+```c
+int segitiga = 3, persegi = 4;
+```
+Di bawah ini mendefinisikan variabel di atas, namun tidak memberikan nilai untuknya.
+```c
+int segitiga, persegi;
+```
+
+## Basic I/O
+I/O (Input/Output) adalah separuh hati dari banyak program. I/O membuat program yang kalian buat dapat berinteraksi dengan dunia luar, baik dengan file, program lain, atau pengguna/manusia. Untuk kali ini, kita hanya akan membahas I/O yang melibatkan dengan user/pengguna/manusia.
+### Basic Output
+Salah satu output (keluaran) yang paling mendasar yang dapat dibuat oleh program C adalah perintah *print to console* atau mencetak *console*. Seperti yang telah kita bahas pada sub-subbab sebelumnya mengenai [memahami kode *Hello World*](#program-sederhana), kita dapat menggunakan perintah `printf()` untuk mencetak apapun yang kita mau ke consol. 
+```c
+printf("Hello World!");
+printf("Hello 1234");
+```
+Sejauh ini, kita baru mempelajari cara mencetak data yang langsung kita berikan sebagai *string* atau karakter mentah. Bagaimana jika kita ingin mencetak nilai dari sebuah variabel? Berikut sintax untuk mengeluarkan sebuah variable.
+```c
+#include <stdio.h>  
+int main() {
+	char name[6] = "Jumadi";  
+	int number = 168;
+	
+	printf("Your Output: %s %d \n", name, number);
+	// '\n' adalah "newline", biasa kita kenal dengan "enter"
+	return  0;  
+}
+```
+*Output* pada *console*:
+```
+Your Output: Jumadi 168
+```
+Pada contoh program di atas, kita menggunakan format pada fungsi `printf()` kita untuk mencetak variabel `name[]` dan `number`, di mana `name[]` bertipe *char array* atau string, sedangkan `number` bertipe integer. Seperti yang dapat kita lihat, konstanta format (`%s` dan `%d`) merupakan sebuah placeholder atau tempat dari variabel yang kita berikan di sebelah kanan. `%s` berkorespondensi dengan variabel `name`, sedangkan `%d` dengan `number`. Format bagi masing-masing tipe data berbeda-beda. Lihat tabel dan potongan kode di bawah ini.
+
+|Placeholder|Tipe Data|Penjelasan|
+|:---------:|---------|----------|
+|%s|string / *char array*|Tulisan alfanumerik|
+|%d|integer|Angka/bilangan|
+|%f|floating point|Bilangan real|
+
+```c
+#include <stdio.h>  
+int main() {
+	char name[4] = "Data";  
+	int number = 42;
+	float real = 3.14;
+
+	printf("Your Output: %s %d %f \n", name, number, real);
+	// Pada compiler modern, return pada main() tidak harus dituliskan
+	// Referensikan ke perintah dosen kalian mengenai penulisan return pada main()
+}
+```
+*Output* pada *console*:
+```
+Your Output: Data 42 3.14
+```
+> Cara terbaik untuk memahami Basic I/O adalah terus mencoba dan bereksperimen pada IDE kalian!
+
+### Basic Input
+Jika kita sudah mengetahui bagaimana cara mencetak variabel yang telah kita definisikan, sekarang kita akan mempelajari cara meminta pengguna program kita untuk mengisi sebuah variabel. Perhatikan contoh kode di bawah.
+```c
+#include <stdio.h>  
+int main() {
+	char name[100];  
+	int number;
+	float real;
+
+    printf("Enter a value: ");
+    scanf("%s %d %f", name, &number, &real);
+	
+	printf("Your Inputs: %s %d %f \n", name, number, real);
+}
+```
+*Output* pada *console*:
+```
+Enter a value: BengBeng 12 43.93
+Your Inputs: BengBeng 12 43.93
+```
+> Note: "BengBeng 12 43.93" adalah nilai yang dimasukkan oleh pengguna
+
+Dapat kita lihat bahwa fungsi yang "menangkap" masukan/input pengguna dari *console*, yaitu `scanf()`, menggunakan format placeholder yang sama dengan fungsi `printf()`.
+```c
+scanf("%s %d %f", name, &number, &real);
+```
+Potongan fungsi di atas akan menangkap masukan pengguna yang dibatasi oleh spasi, dan urut berupa string, integer, dan float, dari kiri ke kanan. Dengan menginput `Halo 12 43.93`, program akan memasukkan "Halo" ke variabel `name`, 12 ke variabel `number`, dan 43.93 ke variabel `real`.  Diperlukan *ampersand* (`&`) di depan variabel berjenis integer/floating point, namun tidak akan dijelaskan alasannya sekarang. *Do as above*
+Fungsi `scanf()` yang kita gunakan ini memiliki sebuah kekurangan, yaitu tidak bisa menerima *string* yang ber-spasi. Namun, kita akan tetap menggunakan metode ini untuk sekarang.
+> Cobalah bereksperimen dengan memberikan masukan ber spasi, atau menghapus ampersand (&) di awal variabel integer dan floating point!
+
+<br />
+
+[>> Materi Berikutnya (Algoritma, Pseudocode, dan Source Code) >>](2-AlgoritmaPseudocodeSourcecode.md)
