@@ -1,11 +1,11 @@
-[<< Materi Sebelumnya (Daftar Materi) <<](../DaftarMateri.md)
+[<< Materi Sebelumnya<<](../README.md)
 # 3.1 - Pemilihan dengan Switch
 
-Kondisi SWITCH CASE adalah percabangan kode program dimana kita membandingkan isi sebuah variabel dengan beberapa nilai. Jika proses perbandingan tersebut menghasilkan nilai true, maka block kode program akan dijalankan. Switch case sangat berguna ketika ingin melakukan perbandingan untuk banyak kasus.
+Switch case merupakan sebuah struktur percabangan (Conditioning) dalam pemrograman di mana ia memeriksa nilai dari sebuah variabel dan mengevaluasi beberapa kemungkinan. Jika hasil perbandingan sesuai dengan salah satu nilai yang telah ditentukan, maka blok kode yang sesuai akan dieksekusi. Sangat bermanfaat ketika kita perlu mengevaluasi berbagai kasus.
 
-Kondisi SWITCH CASE terdiri dari 2 bagian, yakni perintah SWITCH dimana terdapat nama variabel yang akan diperiksa, serta 1 atau lebih perintah CASE, masing-masing untuk setiap nilai yang ingin diperiksa.
+Struktur kondisi switch case terdiri dari dua bagian utama, yaitu perintah "switch" yang menyertakan variabel yang akan diperiksa, dan satu atau lebih perintah "case", masing-masing digunakan untuk menentukan nilai-nilai yang ingin diperiksa.
 
-Berikut format dasar penulisan kondisi SWITCH CASE dalam bahasa C:
+Berikut adalah contoh format dasar penggunaan kondisi switch case dalam bahasa pemrograman C:
 
 ## Syntax:
 
@@ -18,7 +18,7 @@ switch (/* expression */)
 
     case /* konstanta */:
         /* perintah... */
-        break; 
+        break; /* opsional*/
         
     default:  /* opsional */
         break; 
@@ -30,7 +30,7 @@ switch (/* expression */)
 Contoh penggunaan switch dalam program C adalah sebagai berikut:
 - ketika `pilihan` bernilai 1 maka potongan kode dibawah akan menampilkan **Kamu mengetik angka 1**
 - ketika `pilihan` bernilai 2 maka potongan kode dibawah akan menampilkan **Kamu mengetik angka 2**
-- ketika `pilihan` **tidak** bernilai 1 atau 2 maka potongan kode dibawah akan menampilkan **Kamu tidak mengetik angka 1 atau 2**
+- ketika `pilihan` **tidak** bernilai 1 atau 2 maka potongan kode dibawah akan menampilkan **Bukan angka 1 atau 2**
 
 ```c
 switch (pilihan)
@@ -44,7 +44,7 @@ switch (pilihan)
         break; 
         
     default:  
-        printf("Kamu tidak mengetik angka 1 atau 2\n");
+        printf("Bukan angka 1 atau 2\n");
         break; 
 }
 ```
@@ -80,9 +80,13 @@ switch (pilihan)
 ```
 
 ### Kelemahan SWITCH CASE:
-Struktur SWITCH CASE ini terlihat lebih rapi daripada struktur IF ELSE IF, dan kadang kala bisa lebih efisien. Namun SWITCH CASE juga memiliki batasan, yakni tidak bisa dipakai untuk kondisi yang lebih kompleks seperti perbandingan dengan tanda lebih besar dari ” > “, maupun penggabungan kondisi.
+Struktur SWITCH CASE memang dapat memberikan kode yang lebih terstruktur dan rapi jika hanya perlu membandingkan variabel dengan sejumlah nilai diskrit. Membuat Switch menjadi pilihan yang baik ketika ada banyak kasus yang berbeda untuk dipertimbangkan. Namun, perlu diperhatikan bahwa SWITCH CASE memiliki batasan tertentu.
 
-Kita tidak bisa membuat struktur CASE seperti berikut:
+Salah satu batasan utama dari SWITCH CASE adalah bahwa ia hanya dapat digunakan untuk perbandingan nilai diskrit, seperti angka atau nilai-nilai yang dapat dianggap sama atau tidak sama dengan variabel yang diperiksa. SWITCH CASE tidak mendukung perbandingan yang lebih kompleks, seperti perbandingan dengan tanda lebih besar (>), kurang dari (<), atau perbandingan yang melibatkan penggabungan kondisi.
+
+Ketika perlu mengevaluasi kondisi yang lebih kompleks atau menggabungkan beberapa kondisi, maka struktur IF ELSE IF menjadi pilihan yang lebih fleksibel. IF ELSE IF, dapat membuat kondisi yang lebih kompleks dengan menggunakan operator perbandingan dan logika boolean, seperti AND (&&) atau OR (||).
+
+struktur CASE tidak bisa dibuat seperti berikut:
 
  ```c
  case > '90':
@@ -91,7 +95,7 @@ Kita tidak bisa membuat struktur CASE seperti berikut:
   ```
 Kondisi perbandingan di atas hanya bisa ditulis menggunakan struktur IF.
 
-Sehingga jika kondisi yang diperiksa cukup rumit, tetap harus menggunakan struktur IF ELSE IF. Struktur SWITCH CASE hanya cocok dipakai untuk operasi perbandingan sederhana, dimana nilai yang diperiksa hanya terdiri dari nilai yang tetap.
+Sehingga jika kondisi yang diperiksa cukup rumit, tetap harus menggunakan struktur IF ELSE IF. Struktur SWITCH CASE hanya cocok dipakai untuk operasi perbandingan sederhana, dimana nilai yang diperiksa hanya terdiri dari nilai yang tetap dan diskrit.
 
 ### Case Ranges:
 Case Ranges adalah ekstension dari bahasa C yang berarti ini bukan C standar (tidak bisa digunakan pada semua compiler C)
