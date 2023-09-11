@@ -1,6 +1,8 @@
 <h1 align="center"> Praktikum Konsep Pemrograman - S1 Sains Data UNS </h1>
 <h3 align="center"> Tahun Ajaran 2023/2024 Semester Ganjil </h3>
 
+<p align ="center">  <img width = "440" height "248" src = "https://mir-s3-cdn-cf.behance.net/projects/404/8e6692141570489.Y3JvcCw4OTksNzAzLDYyLDUz.png" </p>
+
 <h3 align="center"> Daftar isi </h3>
 
 ## 1. Structured Programming
