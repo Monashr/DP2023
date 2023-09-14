@@ -21,10 +21,21 @@
 
 ## 3. Function 
 
-### [3.1 Fucntion](/3.Function/3.1-Function.md)
+### [3.1 Function](/3.Function/3.1-Function.md)
 ### [3.2 Fungsi Library C](/3.Function/3.2-FungsiLibraryC.md)
 ### [3.3 Scope](/3.Function/3.3-Scope.md)
 ### [3.4 Recursion](/3.Function/3.4-Recursion.md)
 
+## 4. Array 
+
+### [4.1 Array](/4.Array/4.1-Array.md)
+### [4.2 ArrayMultiDimensi](/4.Array/4.2-ArrayMultidimensi.md)
+### [4.3 ArrayParameter](/4.Array/4.3-ArrayParameter.md)
+
+## 5. Pointer
+
+### [5.1 Pointer](/5.Pointer/5.1-Pointer.md)
+### [5.2 Pass-By-Reference](/5.Pointer/5.2-PassByRef.md)
+### [5.3 Dymanic Allocation Memory](/5.Pointer/5.3-DMA.md)
 
 <h1 align="center"> Sains Data UNS </h1>
