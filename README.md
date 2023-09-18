@@ -38,4 +38,9 @@
 ### [5.2 Pass-By-Reference](/5.Pointer/5.2-PassByRef.md)
 ### [5.3 Dymanic Allocation Memory](/5.Pointer/5.3-DMA.md)
 
+## 6. Formatted IO
+
+### [6.1 Formatted IO](/6.FormattedIO/6.1-PrintFormat.md)
+### [6.2 Scanf Format](/6.FormattedIO/6.2-ScanfFormats.md)
+
 <h1 align="center"> Sains Data UNS </h1>
